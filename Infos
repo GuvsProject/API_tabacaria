@@ -1,0 +1,13 @@
+startar: 
+    npm run dev OU yarn dev
+
+criar banco: 
+    yarn sequelize db:migrate
+
+apagar último banco: 
+    yarn sequelize db:migrate:undo
+
+Cria a migration:
+    yarn sequelize migration:create --name=create-NOME
+
+
