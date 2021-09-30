@@ -5,7 +5,6 @@ module.exports = {
         const {name, quantity, price} = req.body;
 
         const product = await Product.create({name, quantity, price});
-
         return res.json(product);
     },
 
