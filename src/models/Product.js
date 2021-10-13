@@ -7,7 +7,10 @@ class Product extends Model {
             quantity: DataTypes.INTEGER,
             price: DataTypes.DOUBLE,
         }, {
-            sequelize
+            sequelize,
+            schema: 'public',
+            modelName: 'Product',
+            tableName: 'Product',
         })
     }
 }

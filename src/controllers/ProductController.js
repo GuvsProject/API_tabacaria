@@ -12,5 +12,12 @@ module.exports = {
         const product = await Product.findAll();
 
         return res.json(product);
-    }
+    },
+
+    async update(req, res){
+        const {id, name, quantity, price} = req.body;
+        const product = await ProductPersistence.findAndUpdateById(req.body, id);
+
+        return res.json(product);
+    },
 };

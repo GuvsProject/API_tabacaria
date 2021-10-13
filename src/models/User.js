@@ -8,7 +8,10 @@ class User extends Model {
             email: DataTypes.STRING,
             cpf: DataTypes.BIGINT,
         }, {
-            sequelize
+            sequelize,
+            schema: 'public',
+            modelName: 'User',
+            tableName: 'User',
         })
     }
 }
