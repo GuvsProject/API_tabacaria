@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const UserPersistence = require('../models/UserPersistence');
 
 module.exports = {
     async store(req, res){
@@ -13,5 +14,12 @@ module.exports = {
         const users = await User.findAll();
 
         return res.json(users);
-    }
+    },
+
+    async update(req, res){
+        const {name, password, email, cpf} = req.body;
+        const user = await UserPersistence.findAndUpdateByCpf(req.body, cpf);
+
+        return res.json(user);
+    },
 };
