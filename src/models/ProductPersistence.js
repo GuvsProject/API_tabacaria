@@ -12,6 +12,12 @@ class ProductPersistence{
             {where: {id: id}}
         );
     }
+
+    static async findByProductName(name) {
+        return await User.findOne(
+            {where: {name: name}}
+        );
+    }
 }
 
 module.exports = ProductPersistence;

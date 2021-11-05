@@ -4,11 +4,13 @@ const ProductController = require('./controllers/ProductController');
 
 const routes = express.Router();
 
-routes.post('/users', UserController.store);
-routes.get('/users', UserController.index);
-routes.patch('/users', UserController.update);
-routes.post('/products', ProductController.store);
-routes.get('/products', ProductController.index);
-routes.patch('/products', ProductController.update);
+routes.post('/users', UserController.store); //cadastra usuário
+routes.get('/users', UserController.index); //lista usuários cadastrados
+routes.patch('/users', UserController.update); //atualiza dados do usuário, busca usuário por nome
+routes.post('/singleUser', UserController.singleIndex); //retorna um usuário buscado pelo email cadastrado
+routes.post('/products', ProductController.store); //cadastra um produto
+routes.get('/products', ProductController.index); //lista os produtos cadastrados
+routes.patch('/products', ProductController.update); //atualiza o produto, busca o produto por nome
+routes.post('/singleProduct', ProductController.singleIndex); //retorna um produto, buscado pelo nome
 
 module.exports = routes;

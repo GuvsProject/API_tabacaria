@@ -14,6 +14,14 @@ module.exports = {
         return res.json(product);
     },
 
+    async singleIndex(req, res){
+        const {name} = req.body;
+
+        const product = await Product.findByProductName(name);
+
+        return res.json(product);
+    },
+
     async update(req, res){
         const {id, name, quantity, price} = req.body;
         const product = await ProductPersistence.findAndUpdateById(req.body, id);

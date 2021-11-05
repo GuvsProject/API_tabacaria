@@ -11,6 +11,12 @@ class UserPersistence{
             {where: {cpf: cpf}}
         );
     }
+
+    static async findByEmail(email) {
+        return await User.findOne(
+            {where: {email: email}}
+        );
+    }
 }
 
 module.exports = UserPersistence;
