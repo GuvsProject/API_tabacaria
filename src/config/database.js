@@ -1,15 +1,15 @@
-module.exports = {
-    dialect: 'postgres',
-    host: 'localhost',
-    username: 'admin',
-    password: 'admin',
-    database: 'mariosdb',
-    define: {
-        timestamps: true,
-        freezeTableName: true,
-    },
-};
-/*
+// module.exports = {
+//     dialect: 'postgres',
+//     host: 'localhost',
+//     username: 'admin',
+//     password: 'admin',
+//     database: 'mariosdb',
+//     define: {
+//         timestamps: true,
+//         freezeTableName: true,
+//     },
+// };
+// /*
 require('dotenv').config();
 
 module.exports = {
@@ -24,5 +24,4 @@ module.exports = {
         acquire: 30000,
         idle: 10000
     },
-}; 
-*/
+};
