@@ -1,6 +1,7 @@
 const express = require('express');
 const UserController = require('./controllers/UserController');
 const ProductController = require('./controllers/ProductController');
+const ComplainController = require('./controllers/ComplainController');
 
 const routes = express.Router();
 
@@ -12,5 +13,6 @@ routes.post('/products', ProductController.store); //cadastra um produto
 routes.get('/products', ProductController.index); //lista os produtos cadastrados
 routes.patch('/products', ProductController.update); //atualiza o produto, busca o produto por nome
 routes.post('/singleProduct', ProductController.singleIndex); //retorna um produto, buscado pelo nome
+routes.post('/complains', ComplainController.store); //registra uma reclamação
 
 module.exports = routes;

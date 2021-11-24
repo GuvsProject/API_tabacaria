@@ -2,9 +2,9 @@ const Product = require('../models/Product');
 
 module.exports = {
     async store(req, res){
-        const {name, quantity, price} = req.body;
+        const {name, quantity, price, description, status} = req.body;
 
-        const product = await Product.create({name, quantity, price});
+        const product = await Product.create({name, quantity, price, description, status});
         return res.json(product);
     },
 
@@ -23,7 +23,7 @@ module.exports = {
     },
 
     async update(req, res){
-        const {id, name, quantity, price} = req.body;
+        const {id, name, quantity, price, description, status} = req.body;
         const product = await ProductPersistence.findAndUpdateById(req.body, id);
 
         return res.json(product);
