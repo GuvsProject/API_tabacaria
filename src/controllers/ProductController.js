@@ -1,3 +1,4 @@
+const ProductPersistence = require('../models/ProductPersistence')
 const Product = require('../models/Product');
 
 module.exports = {
