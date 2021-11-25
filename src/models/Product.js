@@ -6,6 +6,8 @@ class Product extends Model {
             name: DataTypes.STRING,
             quantity: DataTypes.INTEGER,
             price: DataTypes.DOUBLE,
+            description: DataTypes.STRING,
+            status: DataTypes.STRING
         }, {
             sequelize,
             schema: 'public',
