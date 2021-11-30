@@ -29,4 +29,10 @@ module.exports = {
 
         return res.json(product);
     },
+
+    async activeProducts(req, res){
+        const product = await ProductPersistence.findActives();
+
+        return res.json(product);
+    },
 };

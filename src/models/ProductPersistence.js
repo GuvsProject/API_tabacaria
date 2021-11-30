@@ -18,6 +18,12 @@ class ProductPersistence{
             {where: {name: name}}
         );
     }
+
+    static async findActives() {
+        return await User.findAll(
+            {where: {status: active}}
+        );
+    }
 }
 
 module.exports = ProductPersistence;

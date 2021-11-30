@@ -17,6 +17,12 @@ class UserPersistence{
             {where: {email: email}}
         );
     }
+
+    static async verifyPassword(email) {
+        return await User.findOne(
+            {where: {email: email, password: password}}
+        );
+    }
 }
 
 module.exports = UserPersistence;

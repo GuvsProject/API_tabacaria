@@ -30,4 +30,11 @@ module.exports = {
 
         return res.json(user);
     },
+
+    async login(req, res){
+        const {email, password} = req.body;
+        const user = await UserPersistence.verifyPassword(req.body, email, password);
+
+        return res.json(user);
+    },
 };
