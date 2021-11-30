@@ -21,7 +21,7 @@ class ProductPersistence{
 
     static async findActives() {
         return await User.findAll(
-            {where: {status: active}}
+            {where: {status: "active"}}
         );
     }
 }
