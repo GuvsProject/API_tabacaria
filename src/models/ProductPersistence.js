@@ -8,20 +8,22 @@ class ProductPersistence{
                 name: body.name,
                 quantity: body.quantity,
                 price: body.price,
+                description: body.description,
+                status: body.status
             },
             {where: {id: id}}
         );
     }
 
     static async findByProductName(name) {
-        return await User.findOne(
+        return await Product.findOne(
             {where: {name: name}}
         );
     }
 
     static async findActives() {
-        return await User.findAll(
-            {where: {status: "active"}}
+        return await Product.findAll(
+            {where: {status: "Ativo"}}
         );
     }
 }
