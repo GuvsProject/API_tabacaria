@@ -1,3 +1,4 @@
+const { truncate } = require('../models/User');
 const User = require('../models/User');
 const UserPersistence = require('../models/UserPersistence');
 
@@ -34,7 +35,10 @@ module.exports = {
     async login(req, res){
         const {email, password} = req.body;
         const user = await UserPersistence.verifyPassword(email, password);
-
-        return res.json(user);
+        if (user != null) {
+            return res.json(true);
+        } else {
+            return res.json(false);
+        }
     }
 };
