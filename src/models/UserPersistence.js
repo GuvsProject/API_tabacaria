@@ -18,7 +18,7 @@ class UserPersistence{
         );
     }
 
-    static async verifyPassword(email) {
+    static async verifyPassword(email, password) {
         return await User.findOne(
             {where: {email: email, password: password}}
         );

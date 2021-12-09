@@ -15,17 +15,17 @@ module.exports = {
         return res.json(product);
     },
 
-    async singleIndex(req, res){
-        const {name} = req.body;
-
-        const product = await Product.findByProductName(name);
+    async update(req, res){
+        const {id, name, quantity, price, description, status} = req.body;
+        const product = await ProductPersistence.findAndUpdateById(req.body, id);
 
         return res.json(product);
     },
 
-    async update(req, res){
-        const {id, name, quantity, price, description, status} = req.body;
-        const product = await ProductPersistence.findAndUpdateById(req.body, id);
+    async singleIndex(req, res){
+        const {id} = req.body;
+
+        const product = await ProductPersistence.findByProductId(id);
 
         return res.json(product);
     },

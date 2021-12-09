@@ -16,14 +16,6 @@ module.exports = {
         return res.json(users);
     },
 
-    async singleIndex(req, res){
-        const {email} = req.body;
-
-        const user = await User.findByEmail(email);
-
-        return res.json(user);
-    },
-
     async update(req, res){
         const {name, password, email, cpf} = req.body;
         const user = await UserPersistence.findAndUpdateByCpf(req.body, cpf);
@@ -31,10 +23,18 @@ module.exports = {
         return res.json(user);
     },
 
-    async login(req, res){
-        const {email, password} = req.body;
-        const user = await UserPersistence.verifyPassword(req.body, email, password);
+    async singleIndex(req, res){
+        const {email} = req.body;
+
+        const user = await UserPersistence.findByEmail(email);
 
         return res.json(user);
     },
+
+    async login(req, res){
+        const {email, password} = req.body;
+        const user = await UserPersistence.verifyPassword(email, password);
+
+        return res.json(user);
+    }
 };

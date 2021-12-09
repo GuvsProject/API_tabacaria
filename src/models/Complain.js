@@ -3,7 +3,7 @@ const {Model, DataTypes} = require('sequelize');
 class Complain extends Model {
     static init(sequelize) {
         super.init({
-            name: DataTypes.STRING,
+            userId: DataTypes.INTEGER,
             message: DataTypes.STRING,
         }, {
             sequelize,

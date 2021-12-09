@@ -6,13 +6,10 @@ const dbConfig = require('../config/database');
 const User = require ('../models/User');
 const Product = require ('../models/Product');
 
-// const connection = new Sequelize(dbConfig); //para local
-
-
 const connection = new Sequelize(
     process.env.DB, dbConfig);
 
-    User.init(connection);
+User.init(connection);
 Product.init(connection);
 
 module.exports = connection;
