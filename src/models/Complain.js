@@ -4,8 +4,8 @@ class Complain extends Model {
     static init(sequelize) {
         super.init({
             userId: DataTypes.INTEGER,
-            message: DataTypes.STRING,
-            idUser: DataTypes.INTEGER
+            name: DataTypes.STRING,
+            message: DataTypes.STRING
         }, {
             sequelize,
             schema: 'public',

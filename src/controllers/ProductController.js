@@ -1,4 +1,4 @@
-const ProductPersistence = require('../models/ProductPersistence')
+const ProductPersistence = require('../models/ProductPersistence');
 const Product = require('../models/Product');
 
 module.exports = {
@@ -6,6 +6,7 @@ module.exports = {
         const {name, quantity, price, description, status} = req.body;
 
         const product = await Product.create({name, quantity, price, description, status});
+        
         return res.json(product);
     },
 
@@ -18,8 +19,11 @@ module.exports = {
     async update(req, res){
         const {id, name, quantity, price, description, status} = req.body;
         const product = await ProductPersistence.findAndUpdateById(req.body, id);
-
-        return res.json(product);
+        if (product==1){
+            return res.status(200).json();
+        } else {
+            return res.status(400).json();
+        }
     },
 
     async singleIndex(req, res){

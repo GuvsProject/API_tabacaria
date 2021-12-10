@@ -17,6 +17,6 @@ routes.patch('/products', ProductController.update); //atualiza o produto, busca
 routes.post('/singleProduct', ProductController.singleIndex); //retorna um produto, buscado pelo id
 routes.get('/active', ProductController.activeProducts); //lista os produtos "active"
 
-routes.post('/complains', ComplainController.store); //registra uma reclamação
+routes.post('/complain', ComplainController.store); //registra uma reclamação
 
 module.exports = routes;
