@@ -13,8 +13,8 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      type: {
-        type: Sequelize.INTEGER,
+      name: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       message: {

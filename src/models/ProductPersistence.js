@@ -15,15 +15,15 @@ class ProductPersistence{
         );
     }
 
-    static async findByProductName(name) {
+    static async findByProductId(id) {
         return await Product.findOne(
-            {where: {name: name}}
+            {where: {id: id}}
         );
     }
 
     static async findActives() {
         return await Product.findAll(
-            {where: {status: "Ativo"}}
+            {where: {status: "active"}}
         );
     }
 }

@@ -1,21 +1,9 @@
-// module.exports = {
-//     dialect: 'postgres',
-//     host: 'localhost',
-//     username: 'admin',
-//     password: 'admin',
-//     database: 'mariosdb',
-//     define: {
-//         timestamps: true,
-//         freezeTableName: true,
-//     },
-// };
-// /*
 require('dotenv').config();
 
 module.exports = {
     port: 5432,
     url: process.env.DB,
-    dialect: "postgres", // we need to implement 
+    dialect: "postgres",
     define: {
         timestamps: true,
         freezeTableName: true,
