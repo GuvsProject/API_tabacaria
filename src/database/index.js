@@ -12,7 +12,7 @@ const Product = require ('../models/Product');
 const connection = new Sequelize(
     process.env.DB, dbConfig);
 
-    User.init(connection);
+User.init(connection);
 Product.init(connection);
 
 module.exports = connection;
