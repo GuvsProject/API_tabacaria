@@ -11,4 +11,4 @@ const app = express();
 app.use(express.json());
 app.use(cors({origin:true}));
 app.use(routes);
-app.listen(3333, () => console.log("Servidor iniciado."));
+app.listen(process.env.PORT, () => console.log("Servidor iniciado."));
