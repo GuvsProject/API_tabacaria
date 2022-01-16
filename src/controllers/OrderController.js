@@ -16,4 +16,12 @@ module.exports = {
         return res.json(order);
     },
 
+    async listByUser(req, res){
+        const {userId} = req.body;
+
+        const order = await OrderPersistence.findByProductId(userId);
+
+        return res.json(order);
+    },
+
 };

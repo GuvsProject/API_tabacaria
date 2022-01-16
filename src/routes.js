@@ -20,6 +20,7 @@ routes.get('/active', ProductController.activeProducts); //lista os produtos "ac
 
 routes.post('/order', OrderController.store); //registra pedido
 routes.get('/order', OrderController.index); //lista pedidos
+routes.post('/orderbyuser', OrderController.listByUser); //lista pedidos por Id do usuario
 
 routes.post('/complain', ComplainController.store); //registra uma reclamação
 
