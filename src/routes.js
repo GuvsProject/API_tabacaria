@@ -2,6 +2,7 @@ const express = require('express');
 const UserController = require('./controllers/UserController');
 const ProductController = require('./controllers/ProductController');
 const ComplainController = require('./controllers/ComplainController');
+const OrderController = require('./controllers/OrderController');
 
 const routes = express.Router();
 
@@ -16,6 +17,9 @@ routes.get('/products', ProductController.index); //lista os produtos cadastrado
 routes.patch('/products', ProductController.update); //atualiza o produto, busca o produto por id
 routes.post('/singleProduct', ProductController.singleIndex); //retorna um produto, buscado pelo id
 routes.get('/active', ProductController.activeProducts); //lista os produtos "active"
+
+routes.post('/order', OrderController.store); //registra pedido
+routes.get('/order', OrderController.index); //lista pedidos
 
 routes.post('/complain', ComplainController.store); //registra uma reclamação
 

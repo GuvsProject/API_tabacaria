@@ -13,12 +13,24 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      status: {
-        type: Sequelize.STRING,
+      productId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      quantity: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       price: {
         type: Sequelize.DOUBLE,
+        allowNull: false,
+      },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      orderDate: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
       createdAt: {
