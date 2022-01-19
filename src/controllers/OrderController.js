@@ -1,4 +1,4 @@
-const OrderPersistence = require('../models/OrderPersistence');
+const OrderPersistence = require('../models/OrderPersistance');
 const Order = require('../models/Order');
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
     async listByUser(req, res){
         const {userId} = req.body;
 
-        const order = await OrderPersistence.findByProductId(userId);
+        const order = await OrderPersistence.findByUserId(userId);
 
         return res.json(order);
     },
