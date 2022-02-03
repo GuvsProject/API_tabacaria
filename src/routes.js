@@ -11,6 +11,9 @@ routes.get('/users', UserController.index); //lista usuários cadastrados
 routes.patch('/users', UserController.update); //atualiza dados do usuário, busca usuário por nome
 routes.post('/singleUser', UserController.singleIndex); //retorna um usuário buscado pelo email cadastrado
 routes.post('/login', UserController.login); //verifica se usuario e senha batem
+routes.get('/checkCpf', UserController.checkCpf); //verifica se o cpf ja existe
+routes.get('/checkEmail', UserController.checkEmail); //verifica se o email ja existe
+routes.get('/checkActive', UserController.checkActive); //verifica se o email ja existe
 
 routes.post('/products', ProductController.store); //cadastra um produto
 routes.get('/products', ProductController.index); //lista os produtos cadastrados

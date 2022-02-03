@@ -7,6 +7,8 @@ class User extends Model {
             password: DataTypes.STRING,
             email: DataTypes.STRING,
             cpf: DataTypes.BIGINT,
+            admin: DataTypes.STRING,
+            ativo: DataTypes.STRING,
             birthDate: DataTypes.DATE
         }, {
             sequelize,

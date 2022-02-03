@@ -29,6 +29,14 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
+      admin: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      ativo: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,

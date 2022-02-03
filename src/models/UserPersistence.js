@@ -7,7 +7,9 @@ class UserPersistence{
                 name: body.name,
                 password: body.password,
                 email: body.email,
-                birthDate: body.birthDate
+                admin: body.admin,
+                ativo: body.ativo,
+                // birthDate: body.birthDate
             },
             {where: {cpf: cpf}}
         );
@@ -18,11 +20,33 @@ class UserPersistence{
             {where: {email: email}}
         );
     }
+    
+    static async VerifyActive(email) {
+        return await User.findOne(
+            {where: {email: email}},
+            {where: {ativo: "Sim"}}
+        );
+    }
+
 
     static async verifyPassword(email,password) {
         return await User.findOne(
             {where: {email: email, password: password}}
         );
+    }
+
+    static async verifyCPF(cpf) {
+        return await User.findOne(
+            {where: {cpf: cpf}}
+        );
+
+    }
+
+    static async verifyEmail(email) {
+        return await User.findOne(
+            {where: {email: email}}
+        );
+
     }
 }
 
