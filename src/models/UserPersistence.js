@@ -23,8 +23,7 @@ class UserPersistence{
     
     static async VerifyActive(email) {
         return await User.findOne(
-            {where: {email: email}},
-            {where: {ativo: "Sim"}}
+            {where: {email: email, ativo: "Sim"}},
         );
     }
 
